@@ -1,7 +1,14 @@
 .posts {
   max-width: 880px;
   margin: 0 auto;
+  padding: 0 20px 67px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 282px);
+  grid-template-rows: repeat(auto-fill, 361px);
+  grid-gap: 20px 17px;
 }
+
+/* media queries should take place at 920px and 620px */
 
 .post {
   width: 282px;
@@ -23,6 +30,7 @@
 }
 
 .post__title {
+  max-width: 220px;
   font-size: 24px;
   line-height: 1.2;
   font-weight: 900px;
@@ -35,7 +43,7 @@
 .post__like-button {
   width: 21px;
   height: 18px;
-  margin-top: 4px;
+  margin-top: 6px;
   background-image: url("../images/UI_elements/LikeButton.svg");
   background-size: cover;
   transition: background-image 0.2s linear;
@@ -43,4 +51,5 @@
 
 .post__like-button:hover {
   background-image: url("../images/UI_elements/LikeButtonHover.svg");
+  cursor: pointer;
 }
