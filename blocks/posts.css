@@ -8,8 +8,6 @@
   grid-gap: 20px 17px;
 }
 
-/* media queries should take place at 920px and 620px */
-
 .post {
   width: 282px;
   height: 361px;
@@ -44,12 +42,25 @@
   width: 21px;
   height: 18px;
   margin-top: 6px;
-  background-image: url("../images/UI_elements/LikeButton.svg");
+  background-image: url("../images/LikeButton.svg");
   background-size: cover;
   transition: background-image 0.2s linear;
 }
 
 .post__like-button:hover {
-  background-image: url("../images/UI_elements/LikeButtonHover.svg");
+  background-image: url("../images/LikeButtonHover.svg");
   cursor: pointer;
+}
+
+@media screen and (max-width: 920px) and (min-width: 621px) {
+  .posts {
+    max-width: 598px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .posts {
+    width: 282px;
+    padding: 0;
+  }
 }

@@ -2,7 +2,6 @@
   margin: 0 auto;
   padding: 45px 20px 40px;
   max-width: 880px;
-  min-width: 320px;
   height: 74px;
   display: flex;
   flex-direction: column;
@@ -12,11 +11,22 @@
 .header__image {
   width: 173px;
   height: 33px;
-  background-image: url(../images/DesktopHeaderSVG.svg);
+  background-image: url(../images/HeaderSVG.svg);
   background-size: cover;
 }
 
 .header__divider {
   border-bottom: thin solid;
   color: #545454;
+}
+
+@media screen and (max-width: 620px) {
+  .header {
+    padding: 28px 20px 42px;
+  }
+
+  .header__image {
+    width: 126px;
+    height: 24px;
+  }
 }
