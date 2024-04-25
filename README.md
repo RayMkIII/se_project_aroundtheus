@@ -23,6 +23,6 @@ at said resolutions. These changes are meant to support resolutions from >1280px
   
 #### Images  
   
-[Webpage at 1280px and above](./images/demo/MAIN_PAGE.png)  
-[Webpage between 920 and 621px, known as "tablet mode"](./images/demo/TABLET.png)
-[Webpage between 620px and 320px](./images/demo/MOBILE.png)
+* [Webpage at 1280px and above](./images/demo/MAIN_PAGE.png)  
+* [Webpage between 920 and 621px, known as "tablet mode"](./images/demo/TABLET.png)  
+* [Webpage between 620px and 320px](./images/demo/MOBILE.png)
