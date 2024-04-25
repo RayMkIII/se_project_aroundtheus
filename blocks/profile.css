@@ -1,0 +1,71 @@
+.profile {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 20px 51px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile__picture {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
+.profile__info {
+  width: 415px;
+  height: 77px;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.profile__name {
+  margin: 0;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 1.14;
+  color: #fff;
+}
+
+.profile__edit-button {
+  width: 24px;
+  height: 24px;
+  background-image: url(../images/UI_elements/EditButton.png);
+  background-size: cover;
+  margin-top: 16px;
+  transition: background-image 0.2s linear;
+}
+
+.profile__edit-button:hover {
+  background-image: url(../images/UI_elements/EditButtonHover.png);
+  cursor: pointer;
+}
+
+.profile__description {
+  margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.21;
+  color: #fff;
+  align-self: flex-end;
+}
+
+.profile__post-button {
+  width: 150px;
+  height: 50px;
+  margin-left: 20px;
+  background-image: url(../images/UI_elements/Plus.png);
+  background-size: 22px 22px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid #fff;
+  transition: opacity 0.2s linear;
+}
+
+.profile__post-button:hover {
+  opacity: 50%;
+}
