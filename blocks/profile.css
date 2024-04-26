@@ -124,7 +124,7 @@
     margin: 0 10px 14px 10%;
     font-size: 22px;
     line-height: 1.21;
-    max-width: calc(100% - 18px);
+    max-width: 80%;
   }
 
   .profile__edit-button {
