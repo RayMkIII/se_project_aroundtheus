@@ -37,8 +37,8 @@
 .profile__edit-button {
   width: 24px;
   height: 24px;
-  background-image: url(../images/EditButton.svg);
-  background-size: cover;
+  background: transparent url(../images/EditButton.svg) center no-repeat;
+  border: none;
   margin-top: 16px;
   transition: opacity 0.2s linear;
 }
@@ -65,10 +65,8 @@
   width: 150px;
   height: 50px;
   margin-left: 20px;
-  background-image: url(../images/Plus.svg);
+  background: transparent url(../images/Plus.svg) center no-repeat;
   background-size: 22px 22px;
-  background-position: center;
-  background-repeat: no-repeat;
   border: 2px solid #fff;
   border-radius: 2px;
   transition: opacity 0.2s linear;

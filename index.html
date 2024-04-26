@@ -18,22 +18,30 @@
       </header>
 
       <main class="content">
-        <div class="profile">
+        <section class="profile">
           <img
             class="profile__picture"
             src="./images/Avatar.png"
             alt="profile picture"
           />
           <div class="profile__info">
-            <h2 class="profile__name">Jacques Cousteau</h2>
-            <div class="profile__edit-button"></div>
+            <h1 class="profile__name">Jacques Cousteau</h1>
+            <button
+              class="profile__edit-button"
+              aria-label="Profile Edit Button"
+              type="button"
+            ></button>
             <p class="profile__description">Explorer</p>
           </div>
-          <div class="profile__post-button"></div>
-        </div>
+          <button
+            class="profile__post-button"
+            aria-label="Create Post Button"
+            type="button"
+          ></button>
+        </section>
 
-        <div class="posts">
-          <div class="post">
+        <section class="posts">
+          <article class="post">
             <img
               class="post__image"
               src="./images/yosemite.jpg"
@@ -41,10 +49,14 @@
             />
             <div class="post__description">
               <h2 class="post__title">Yosemite Valley</h2>
-              <div class="post__like-button"></div>
+              <button
+                class="post__like-button"
+                aria-label="Like Button"
+                type="button"
+              ></button>
             </div>
-          </div>
-          <div class="post">
+          </article>
+          <article class="post">
             <img
               class="post__image"
               src="./images/lake-louise.jpg"
@@ -52,10 +64,14 @@
             />
             <div class="post__description">
               <h2 class="post__title">Lake Louise</h2>
-              <div class="post__like-button"></div>
+              <button
+                class="post__like-button"
+                aria-label="Like Button"
+                type="button"
+              ></button>
             </div>
-          </div>
-          <div class="post">
+          </article>
+          <article class="post">
             <img
               class="post__image"
               src="./images/bald-mountains.jpg"
@@ -63,17 +79,25 @@
             />
             <div class="post__description">
               <h2 class="post__title">Bald Mountains</h2>
-              <div class="post__like-button"></div>
+              <button
+                class="post__like-button"
+                aria-label="Like Button"
+                type="button"
+              ></button>
             </div>
-          </div>
-          <div class="post">
+          </article>
+          <article class="post">
             <img class="post__image" src="./images/latemar.jpg" alt="Latemar" />
             <div class="post__description">
               <h2 class="post__title">Latemar</h2>
-              <div class="post__like-button"></div>
+              <button
+                class="post__like-button"
+                aria-label="Like Button"
+                type="button"
+              ></button>
             </div>
-          </div>
-          <div class="post">
+          </article>
+          <article class="post">
             <img
               class="post__image"
               src="./images/vanoise.jpg"
@@ -81,10 +105,14 @@
             />
             <div class="post__description">
               <h2 class="post__title">Vanoise National Park</h2>
-              <div class="post__like-button"></div>
+              <button
+                class="post__like-button"
+                aria-label="Like Button"
+                type="button"
+              ></button>
             </div>
-          </div>
-          <div class="post">
+          </article>
+          <article class="post">
             <img
               class="post__image"
               src="./images/lago.jpg"
@@ -92,10 +120,14 @@
             />
             <div class="post__description">
               <h2 class="post__title">Lago di Braies</h2>
-              <div class="post__like-button"></div>
+              <button
+                class="post__like-button"
+                aria-label="Like Button"
+                type="button"
+              ></button>
             </div>
-          </div>
-        </div>
+          </article>
+        </section>
       </main>
       <footer class="footer">
         <p class="footer__copyright">&copy 2024 Around The U.S.</p>

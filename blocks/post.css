@@ -32,8 +32,8 @@
   width: 21px;
   height: 18px;
   margin-top: 6px;
-  background-image: url("../images/LikeButton.svg");
-  background-size: cover;
+  background: transparent url(../images/LikeButton.svg) center no-repeat;
+  border: none;
   transition: opacity 0.2s linear;
 }
 
