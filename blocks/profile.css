@@ -38,7 +38,7 @@
   width: 24px;
   height: 24px;
   background: transparent url(../images/EditButton.svg) center no-repeat;
-  border: none;
+  border: thin solid #fff;
   margin-top: 16px;
   transition: opacity 0.2s linear;
 }
