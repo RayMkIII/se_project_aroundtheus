@@ -4,52 +4,7 @@
   padding: 0 20px 67px;
   display: grid;
   grid-template-columns: repeat(auto-fill, 282px);
-  grid-template-rows: repeat(auto-fill, 361px);
   grid-gap: 20px 17px;
-}
-
-.post {
-  width: 282px;
-  height: 361px;
-  border-radius: 10px;
-  background-color: white;
-}
-
-.post__image {
-  width: 282px;
-  height: 282px;
-  border-radius: 10px 10px 0 0;
-}
-
-.post__description {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-.post__title {
-  max-width: 220px;
-  font-size: 24px;
-  line-height: 1.2;
-  font-weight: 900;
-  margin: 0;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.post__like-button {
-  width: 21px;
-  height: 18px;
-  margin-top: 6px;
-  background-image: url("../images/LikeButton.svg");
-  background-size: cover;
-  transition: background-image 0.2s linear;
-}
-
-.post__like-button:hover {
-  background-image: url("../images/LikeButtonHover.svg");
-  cursor: pointer;
 }
 
 @media screen and (max-width: 920px) and (min-width: 621px) {

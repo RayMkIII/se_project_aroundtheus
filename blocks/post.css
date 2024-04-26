@@ -1,0 +1,43 @@
+.post {
+  width: 282px;
+  padding-bottom: 6.815px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.post__image {
+  width: 282px;
+  height: 282px;
+  border-radius: 10px 10px 0 0;
+}
+
+.post__description {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.post__title {
+  max-width: 220px;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 900;
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.post__like-button {
+  width: 21px;
+  height: 18px;
+  margin-top: 6px;
+  background-image: url("../images/LikeButton.svg");
+  background-size: cover;
+  transition: opacity 0.2s linear;
+}
+
+.post__like-button:hover {
+  opacity: 50%;
+  cursor: pointer;
+}

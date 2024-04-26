@@ -1,7 +1,7 @@
 .profile {
   max-width: 880px;
   margin: 0 auto;
-  padding: 0 20px 51px;
+  padding: 40px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,7 +16,6 @@
 
 .profile__info {
   width: 415px;
-  height: 77px;
   margin-right: auto;
   display: flex;
   justify-content: space-between;
@@ -24,7 +23,7 @@
 }
 
 .profile__name {
-  margin: 0;
+  margin: 0 0 7px;
   font-weight: 500;
   font-size: 42px;
   line-height: 1.14;
@@ -34,14 +33,14 @@
 .profile__edit-button {
   width: 24px;
   height: 24px;
-  background-image: url(../images/EditButton.png);
+  background-image: url(../images/EditButton.svg);
   background-size: cover;
   margin-top: 16px;
-  transition: background-image 0.2s linear;
+  transition: opacity 0.2s linear;
 }
 
 .profile__edit-button:hover {
-  background-image: url(../images/EditButtonHover.png);
+  opacity: 60%;
   cursor: pointer;
 }
 
@@ -58,19 +57,21 @@
   width: 150px;
   height: 50px;
   margin-left: 20px;
-  background-image: url(../images/Plus.png);
+  background-image: url(../images/Plus.svg);
   background-size: 22px 22px;
   background-position: center;
   background-repeat: no-repeat;
   border: 2px solid #fff;
+  border-radius: 2px;
   transition: opacity 0.2s linear;
 }
 
 .profile__post-button:hover {
-  opacity: 50%;
+  opacity: 60%;
+  cursor: pointer;
 }
 
-@media screen and (max-width: 920px) and (min-width: 621px) {
+@media screen and (max-width: 920px) {
   .profile__post-button {
     width: 100px;
   }
@@ -84,7 +85,9 @@
   }
 
   .profile__edit-button {
-    margin-top: 10px;
+    width: 21px;
+    height: 21px;
+    margin-top: 8px;
   }
 
   .profile__description {
@@ -113,6 +116,7 @@
   }
 
   .profile__name {
+    margin: 0;
     font-size: 22px;
     line-height: 1.21;
     order: 1;
@@ -120,7 +124,9 @@
   }
 
   .profile__edit-button {
-    margin-top: 0;
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
     order: 3;
     align-self: baseline;
   }
