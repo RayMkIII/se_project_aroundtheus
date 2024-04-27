@@ -1,6 +1,6 @@
 .header {
   margin: 0 auto;
-  padding: 45px 20px 40px;
+  padding: 45px 0 40px;
   max-width: 840px;
   display: flex;
   flex-direction: column;
@@ -18,7 +18,7 @@
 
 @media screen and (max-width: 620px) {
   .header {
-    padding: 28px 20px;
+    padding: 28px 0;
   }
 
   .header__image {
