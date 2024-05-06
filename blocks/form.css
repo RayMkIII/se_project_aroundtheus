@@ -1,0 +1,51 @@
+.form__fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.form__input-name {
+  box-sizing: border-box;
+  max-width: 358px;
+  margin: 54px 36px 30px;
+  padding: 0 0 13px;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  border: none;
+  border-bottom: rgba(0, 0, 0, 0.2) solid 1px;
+}
+
+.form__input-description {
+  box-sizing: border-box;
+  max-width: 358px;
+  margin: 0 36px 48px; /* the only thing that changes between this and the name*/
+  padding: 0 0 13px;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  border: none;
+  border-bottom: rgba(0, 0, 0, 0.2) solid 1px;
+}
+
+.form__save-button {
+  max-width: 358px;
+  margin: 0 36px 36px;
+  padding: 16px 0;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  color: #fff;
+  background-color: #000;
+  border-radius: 2px;
+  border: none;
+  transition: opacity 0.2s linear;
+}
+
+.form__save-button:hover {
+  opacity: 80%;
+  cursor: pointer;
+}
