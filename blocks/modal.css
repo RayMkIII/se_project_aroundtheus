@@ -10,7 +10,7 @@
   z-index: 99;
 }
 
-.modal__opened {
+.modal_opened {
   display: flex;
 }
 

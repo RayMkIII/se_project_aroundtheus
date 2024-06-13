@@ -11,18 +11,18 @@ const inputDesc = document.querySelector(".form__input-description");
 openButton.addEventListener("click", function () {
   inputName.value = profileName.textContent;
   inputDesc.value = profileDesc.textContent;
-  modal.classList.add("modal__opened");
+  modal.classList.add("modal_opened");
 });
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = inputName.value;
   profileDesc.textContent = inputDesc.value;
-  modal.classList.remove("modal__opened");
+  modal.classList.remove("modal_opened");
 }
 
 submitButton.addEventListener("click", handleProfileFormSubmit);
 
 closeButton.addEventListener("click", function () {
-  modal.classList.remove("modal__opened");
+  modal.classList.remove("modal_opened");
 });
