@@ -1,3 +1,5 @@
+const cardGallery = document.querySelector(".posts");
+
 const object1 = {
   name: "Yosemite Valley",
   link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
@@ -31,15 +33,15 @@ const object6 = {
 const initialCards = [object1, object2, object3, object4, object5, object6];
 
 function getCardElement(data) {
-  let cardTemplate = document.querySelector("#post").content;
-  let cardGallery = document.querySelector(".posts");
-  let cardElement = cardTemplate.querySelector(".post").cloneNode(true);
+  const cardTemplate = document.querySelector("#post").content;
+  const cardElement = cardTemplate.querySelector(".post").cloneNode(true);
   cardElement.querySelector(".post__image").src = data.link;
   cardElement.querySelector(".post__image").alt = data.name;
   cardElement.querySelector(".post__title").textContent = data.name;
-  cardGallery.prepend(cardElement);
+  return cardElement;
 }
 
 for (card of initialCards) {
-  getCardElement(card);
+  const cardElement = getCardElement(card);
+  cardGallery.prepend(cardElement);
 }
