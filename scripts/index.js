@@ -41,7 +41,7 @@ function getCardElement(data) {
   return cardElement;
 }
 
-for (card of initialCards) {
-  const cardElement = getCardElement(card);
+initialCards.forEach(function (item) {
+  const cardElement = getCardElement(item);
   cardGallery.prepend(cardElement);
-}
+});
