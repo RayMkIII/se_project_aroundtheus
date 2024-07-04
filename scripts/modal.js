@@ -1,28 +1,47 @@
-const openButton = document.querySelector(".profile__edit-button");
-const modal = document.querySelector(".modal");
-const closeButton = document.querySelector(".modal__close-button");
-const submitButton = document.querySelector(".form__save-button");
+const profileOpenButton = document.querySelector(".profile__edit-button");
+const profileModal = document.querySelector(".modal__profile");
+const profileCloseButton = profileModal.querySelector(".modal__close-button");
+const profileSubmitButton = profileModal.querySelector(".form__save-button");
+
+const postOpenButton = document.querySelector(".profile__post-button");
+const postModal = document.querySelector(".modal__post");
+const postCloseButton = postModal.querySelector(".modal__close-button");
+const postSubmitButton = postModal.querySelector(".form__save-button");
 
 const profileName = document.querySelector(".profile__name");
 const profileDesc = document.querySelector(".profile__description");
 const inputName = document.querySelector(".form__input-name");
 const inputDesc = document.querySelector(".form__input-description");
 
-openButton.addEventListener("click", function () {
+const openModal = (modal) => {
+  modal.classList.add("modal_opened");
+};
+
+const closeModal = (modal) => {
+  modal.classList.remove("modal_opened");
+};
+
+profileOpenButton.addEventListener("click", function () {
   inputName.value = profileName.textContent;
   inputDesc.value = profileDesc.textContent;
-  modal.classList.add("modal_opened");
+  openModal(profileModal);
 });
 
-function handleProfileFormSubmit(evt) {
+postOpenButton.addEventListener("click", () => {
+  openModal(postModal);
+});
+
+profileSubmitButton.addEventListener("click", (evt) => {
   evt.preventDefault();
   profileName.textContent = inputName.value;
   profileDesc.textContent = inputDesc.value;
-  modal.classList.remove("modal_opened");
-}
+  closeModal(profileModal);
+});
 
-submitButton.addEventListener("click", handleProfileFormSubmit);
+profileCloseButton.addEventListener("click", () => {
+  closeModal(profileModal);
+});
 
-closeButton.addEventListener("click", function () {
-  modal.classList.remove("modal_opened");
+postCloseButton.addEventListener("click", () => {
+  closeModal(postModal);
 });

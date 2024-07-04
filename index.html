@@ -62,7 +62,7 @@
       </footer>
     </div>
 
-    <div class="modal">
+    <div class="modal modal__profile">
       <div class="modal__container">
         <h2 class="modal__header">Edit profile</h2>
         <form class="form">
@@ -82,6 +82,42 @@
             <button
               class="form__save-button"
               aria-label="Save Profile Name and Description"
+              type="submit"
+            >
+              Save
+            </button>
+          </fieldset>
+        </form>
+        <button
+          class="modal__close-button"
+          aria-label="Close Edit Window"
+          type="button"
+        ></button>
+      </div>
+    </div>
+
+    <div class="modal modal__post">
+      <div class="modal__container">
+        <h2 class="modal__header">New place</h2>
+        <form class="form">
+          <fieldset class="form__fieldset">
+            <input
+              type="text"
+              class="form__input form__input-title"
+              placeholder="Title"
+              name="post__title"
+              required
+            />
+            <input
+              type="text"
+              class="form__input form__input-link"
+              placeholder="Image URL"
+              name="post__link"
+              required
+            />
+            <button
+              class="form__save-button"
+              aria-label="Save New Place"
               type="submit"
             >
               Save
