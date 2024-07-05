@@ -38,6 +38,12 @@ function getCardElement(data) {
   cardElement.querySelector(".post__image").src = data.link;
   cardElement.querySelector(".post__image").alt = data.name;
   cardElement.querySelector(".post__title").textContent = data.name;
+
+  const likeButton = cardElement.querySelector(".post__like-button");
+  likeButton.addEventListener("click", () => {
+    likeButton.classList.toggle("post__like-button--active");
+  });
+
   return cardElement;
 }
 
