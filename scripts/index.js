@@ -44,6 +44,12 @@ function getCardElement(data) {
     likeButton.classList.toggle("post__like-button--active");
   });
 
+  const deleteButton = cardElement.querySelector(".post__delete-button");
+  deleteButton.addEventListener("click", () => {
+    const post = deleteButton.closest(".post");
+    post.remove();
+  });
+
   return cardElement;
 }
 
