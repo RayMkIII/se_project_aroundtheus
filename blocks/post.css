@@ -3,6 +3,23 @@
   padding-bottom: 6.815px;
   border-radius: 10px;
   background-color: #fff;
+  position: relative;
+}
+
+.post__delete-button {
+  position: absolute;
+  width: 18px;
+  height: 19.3px;
+  top: 18px;
+  right: 15px;
+  background: transparent url(../images/Trash.svg) center no-repeat;
+  border: none;
+  transition: opacity 0.2s linear;
+}
+
+.post__delete-button:hover {
+  opacity: 60%;
+  cursor: pointer;
 }
 
 .post__image {
