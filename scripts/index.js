@@ -39,6 +39,18 @@ function getCardElement(data) {
   cardElement.querySelector(".post__image").alt = data.name;
   cardElement.querySelector(".post__title").textContent = data.name;
 
+  const postImage = cardElement.querySelector(".post__image");
+  postImage.addEventListener("click", () => {
+    const imageModal = document.querySelector(".modal__post-image");
+    imageModal.querySelector(".modal__image").src =
+      cardElement.querySelector(".post__image").src;
+    imageModal.querySelector(".modal__image").alt =
+      cardElement.querySelector(".post__image").alt;
+    imageModal.querySelector(".modal__image-title").textContent =
+      cardElement.querySelector(".post__title").textContent;
+    imageModal.classList.toggle("modal_opened");
+  });
+
   const likeButton = cardElement.querySelector(".post__like-button");
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("post__like-button--active");

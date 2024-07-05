@@ -28,6 +28,10 @@
   border-radius: 10px 10px 0 0;
 }
 
+.post__image:hover {
+  cursor: pointer;
+}
+
 .post__description {
   display: flex;
   justify-content: space-between;
