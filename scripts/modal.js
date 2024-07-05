@@ -11,8 +11,8 @@ const postOpenButton = document.querySelector(".profile__post-button");
 const postModal = document.querySelector(".modal__post");
 const postSubmitButton = postModal.querySelector(".form__save-button");
 
-const postTitle = postModal.querySelector(".form__input-title");
-const postLink = postModal.querySelector(".form__input-link");
+const inputTitle = postModal.querySelector(".form__input-title");
+const inputLink = postModal.querySelector(".form__input-link");
 
 const closeButtons = document.querySelectorAll(".modal__close-button");
 
@@ -72,10 +72,10 @@ function getCardElement(title, link) {
 
 postSubmitButton.addEventListener("click", (evt) => {
   evt.preventDefault();
-  const newPost = getCardElement(postTitle.value, postLink.value);
+  const newPost = getCardElement(inputTitle.value, inputLink.value);
   cardGallery.prepend(newPost);
-  postTitle.value = "Title";
-  postLink.value = "Image URL";
+  inputTitle.value = "Title";
+  inputLink.value = "Image URL";
   toggleModal(postModal);
 });
 
