@@ -41,7 +41,7 @@ function getCardElement(data) {
 
   const postImage = cardElement.querySelector(".post__image");
   postImage.addEventListener("click", () => {
-    const imageModal = document.querySelector(".modal__post-image");
+    const imageModal = document.querySelector(".image-modal");
     imageModal.querySelector(".modal__image").src =
       cardElement.querySelector(".post__image").src;
     imageModal.querySelector(".modal__image").alt =

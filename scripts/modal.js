@@ -1,6 +1,6 @@
 const profileOpenButton = document.querySelector(".profile__edit-button");
-const profileModal = document.querySelector(".modal__profile");
-const profileSubmitButton = profileModal.querySelector(".form__save-button");
+const profileModal = document.querySelector(".profile-modal");
+const profileForm = profileModal.querySelector(".form");
 
 const profileName = document.querySelector(".profile__name");
 const profileDesc = document.querySelector(".profile__description");
@@ -8,8 +8,8 @@ const inputName = document.querySelector(".form__input-name");
 const inputDesc = document.querySelector(".form__input-description");
 
 const postOpenButton = document.querySelector(".profile__post-button");
-const postModal = document.querySelector(".modal__post");
-const postSubmitButton = postModal.querySelector(".form__save-button");
+const postModal = document.querySelector(".post-modal");
+const postForm = postModal.querySelector(".form");
 
 const inputTitle = postModal.querySelector(".form__input-title");
 const inputLink = postModal.querySelector(".form__input-link");
@@ -30,7 +30,7 @@ postOpenButton.addEventListener("click", () => {
   toggleModal(postModal);
 });
 
-profileSubmitButton.addEventListener("click", (evt) => {
+profileForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
   profileName.textContent = inputName.value;
   profileDesc.textContent = inputDesc.value;
@@ -46,7 +46,7 @@ function getCardElement(title, link) {
 
   const postImage = cardElement.querySelector(".post__image");
   postImage.addEventListener("click", () => {
-    const imageModal = document.querySelector(".modal__post-image");
+    const imageModal = document.querySelector(".post-modal");
     imageModal.querySelector(".modal__image").src =
       cardElement.querySelector(".post__image").src;
     imageModal.querySelector(".modal__image").alt =
@@ -70,7 +70,7 @@ function getCardElement(title, link) {
   return cardElement;
 }
 
-postSubmitButton.addEventListener("click", (evt) => {
+postForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
   const newPost = getCardElement(inputTitle.value, inputLink.value);
   cardGallery.prepend(newPost);
