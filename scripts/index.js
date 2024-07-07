@@ -119,8 +119,7 @@ postForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
   const newPost = getCardElement(inputTitle.value, inputLink.value);
   cardGallery.prepend(newPost);
-  inputTitle.value.reset();
-  inputLink.value.reset();
+  postForm.reset();
   toggleModal(postModal);
 });
 

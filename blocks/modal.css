@@ -86,6 +86,7 @@
 
   .modal__close-button {
     right: 0px;
-    top: -60px;
+    width: 26px;
+    height: 26px;
   }
 }
