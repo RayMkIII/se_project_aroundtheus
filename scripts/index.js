@@ -68,7 +68,7 @@ function getCardElement(title, link) {
   postImage.alt = title;
   postTitle.textContent = title;
 
-  cardElement.querySelector(".post__image").addEventListener("click", () => {
+  postImage.addEventListener("click", () => {
     imagePopup.src = postImage.src;
     imagePopup.alt = postImage.alt;
     imagePopupTitle.textContent = postTitle.textContent;
