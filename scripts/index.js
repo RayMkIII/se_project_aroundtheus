@@ -53,6 +53,8 @@ const inputLink = postModal.querySelector(".form__input-link");
 
 //image modal
 const imageModal = document.querySelector(".image-modal");
+const imagePopup = imageModal.querySelector(".modal__image");
+const imagePopupTitle = imageModal.querySelector(".modal__image-title");
 
 //close buttons - all modals
 const closeButtons = document.querySelectorAll(".modal__close-button");
@@ -60,18 +62,17 @@ const closeButtons = document.querySelectorAll(".modal__close-button");
 function getCardElement(title, link) {
   const cardTemplate = document.querySelector("#post").content;
   const cardElement = cardTemplate.querySelector(".post").cloneNode(true);
-  cardElement.querySelector(".post__image").src = link;
-  cardElement.querySelector(".post__image").alt = title;
-  cardElement.querySelector(".post__title").textContent = title;
+  const postImage = cardElement.querySelector(".post__image");
+  const postTitle = cardElement.querySelector(".post__title");
+  postImage.src = link;
+  postImage.alt = title;
+  postTitle.textContent = title;
 
   cardElement.querySelector(".post__image").addEventListener("click", () => {
-    imageModal.querySelector(".modal__image").src =
-      cardElement.querySelector(".post__image").src;
-    imageModal.querySelector(".modal__image").alt =
-      cardElement.querySelector(".post__image").alt;
-    imageModal.querySelector(".modal__image-title").textContent =
-      cardElement.querySelector(".post__title").textContent;
-    imageModal.classList.toggle("modal_opened");
+    imagePopup.src = postImage.src;
+    imagePopup.alt = postImage.alt;
+    imagePopupTitle.textContent = postTitle.textContent;
+    toggleModal(imageModal);
   });
 
   const likeButton = cardElement.querySelector(".post__like-button");
@@ -118,8 +119,8 @@ postForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
   const newPost = getCardElement(inputTitle.value, inputLink.value);
   cardGallery.prepend(newPost);
-  inputTitle.value = "Title";
-  inputLink.value = "Image URL";
+  inputTitle.value.reset();
+  inputLink.value.reset();
   toggleModal(postModal);
 });
 
