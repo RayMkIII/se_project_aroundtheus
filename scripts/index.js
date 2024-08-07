@@ -59,6 +59,7 @@ const imagePopupTitle = imageModal.querySelector(".modal__image-title");
 //close buttons - all modals
 const closeButtons = document.querySelectorAll(".modal__close-button");
 
+//post creation
 function getCardElement(title, link) {
   const cardTemplate = document.querySelector("#post").content;
   const cardElement = cardTemplate.querySelector(".post").cloneNode(true);
@@ -91,9 +92,10 @@ function getCardElement(title, link) {
 
 initialCards.forEach((item) => {
   const cardElement = getCardElement(item.name, item.link);
-  cardGallery.prepend(cardElement);
+  cardGallery.append(cardElement);
 });
 
+// modal/form control
 const toggleModal = (modal) => {
   modal.classList.toggle("modal_opened");
 };
@@ -129,3 +131,74 @@ closeButtons.forEach((button) => {
     toggleModal(parentModal);
   });
 });
+
+//form validation
+function showInputError(formElement, inputElement, errorMessage) {
+  const errorElement = formElement.querySelector(
+    `.${inputElement.name}-input-error`
+  );
+  inputElement.classList.add("form__input_type_error");
+  errorElement.textContent = errorMessage;
+  console.log(errorMessage);
+  errorElement.classList.add("form__input-error_active");
+}
+
+function hideInputError(formElement, inputElement) {
+  const errorElement = formElement.querySelector(
+    `.${inputElement.name}-input-error`
+  );
+  console.log(`.${inputElement.name}-error`);
+  console.log(errorElement);
+  inputElement.classList.remove("form__input_type_error");
+  errorElement.classList.remove("form__input-error_active");
+  errorElement.textContent = "";
+}
+
+function checkInputValidity(formElement, inputElement) {
+  if (!inputElement.validity.valid) {
+    showInputError(formElement, inputElement, inputElement.validationMessage);
+  } else {
+    hideInputError(formElement, inputElement);
+  }
+}
+
+function hasInvalidInput(inputList) {
+  return inputList.some((inputElement) => {
+    return !inputElement.validity.valid;
+  });
+}
+
+function toggleButtonState(inputList, buttonElement) {
+  if (hasInvalidInput(inputList)) {
+    buttonElement.classList.add("disabled");
+  } else {
+    buttonElement.classList.remove("disabled");
+  }
+}
+
+function setEventListeners(formElement) {
+  const inputList = Array.from(formElement.querySelectorAll(".form__input"));
+  const buttonElement = formElement.querySelector(".form__save-button");
+
+  toggleButtonState(inputList, buttonElement);
+
+  inputList.forEach((inputElement) => {
+    inputElement.addEventListener("input", () => {
+      checkInputValidity(formElement, inputElement);
+      toggleButtonState(inputList, buttonElement);
+    });
+  });
+}
+
+function enableValidation() {
+  const formList = Array.from(document.querySelectorAll(".form"));
+
+  formList.forEach((formElement) => {
+    formElement.addEventListener("submit", (evt) => {
+      evt.preventDefault();
+    });
+    setEventListeners(formElement);
+  });
+}
+
+enableValidation();

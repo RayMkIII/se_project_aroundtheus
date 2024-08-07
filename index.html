@@ -70,20 +70,28 @@
     <div class="modal profile-modal">
       <div class="modal__container">
         <h2 class="modal__header">Edit profile</h2>
-        <form class="form">
+        <form class="form" novalidate>
           <fieldset class="form__fieldset">
             <input
               type="text"
               class="form__input form__input-name"
               name="profile__name"
               required
+              minlength="2"
+              maxlength="40"
             />
+            <span class="form__input-error profile__name-input-error"></span>
             <input
               type="text"
               class="form__input form__input-description"
               name="profile__description"
               required
+              minlength="2"
+              maxlength="200"
             />
+            <span
+              class="form__input-error profile__description-input-error"
+            ></span>
             <button
               class="form__save-button"
               aria-label="Save Profile Name and Description"
@@ -104,7 +112,7 @@
     <div class="modal post-modal">
       <div class="modal__container">
         <h2 class="modal__header">New place</h2>
-        <form class="form">
+        <form class="form" novalidate>
           <fieldset class="form__fieldset">
             <input
               type="text"
@@ -112,14 +120,18 @@
               placeholder="Title"
               name="post__title"
               required
+              minlength="1"
+              maxlength="30"
             />
+            <span class="form__input-error post__title-input-error"></span>
             <input
-              type="text"
+              type="url"
               class="form__input form__input-link"
               placeholder="Image URL"
               name="post__link"
               required
             />
+            <span class="form__input-error post__link-input-error"></span>
             <button
               class="form__save-button"
               aria-label="Save New Place"
