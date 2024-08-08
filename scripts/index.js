@@ -58,6 +58,7 @@ const imagePopupTitle = imageModal.querySelector(".modal__image-title");
 
 //close buttons - all modals
 const closeButtons = document.querySelectorAll(".modal__close-button");
+const modalContainers = document.querySelectorAll(".modal__container");
 
 //post creation
 function getCardElement(title, link) {
@@ -96,9 +97,9 @@ initialCards.forEach((item) => {
 });
 
 // modal/form control
-const toggleModal = (modal) => {
+function toggleModal(modal) {
   modal.classList.toggle("modal_opened");
-};
+}
 
 profileOpenButton.addEventListener("click", function () {
   inputName.value = profileName.textContent;
@@ -139,7 +140,6 @@ function showInputError(formElement, inputElement, errorMessage) {
   );
   inputElement.classList.add("form__input_type_error");
   errorElement.textContent = errorMessage;
-  console.log(errorMessage);
   errorElement.classList.add("form__input-error_active");
 }
 
@@ -147,8 +147,6 @@ function hideInputError(formElement, inputElement) {
   const errorElement = formElement.querySelector(
     `.${inputElement.name}-input-error`
   );
-  console.log(`.${inputElement.name}-error`);
-  console.log(errorElement);
   inputElement.classList.remove("form__input_type_error");
   errorElement.classList.remove("form__input-error_active");
   errorElement.textContent = "";
@@ -170,9 +168,9 @@ function hasInvalidInput(inputList) {
 
 function toggleButtonState(inputList, buttonElement) {
   if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add("disabled");
+    buttonElement.disabled = true;
   } else {
-    buttonElement.classList.remove("disabled");
+    buttonElement.disabled = false;
   }
 }
 

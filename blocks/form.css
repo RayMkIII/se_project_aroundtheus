@@ -62,3 +62,15 @@
   opacity: 80%;
   cursor: pointer;
 }
+
+.form__save-button:disabled {
+  color: rgba(200, 200, 200, 1);
+  background-color: #fff;
+  border: 1px;
+  border-color: #000;
+}
+
+.form__save-button:disabled:hover {
+  opacity: 100%;
+  cursor: default;
+}
