@@ -58,7 +58,6 @@ const imagePopupTitle = imageModal.querySelector(".modal__image-title");
 
 //close buttons - all modals
 const closeButtons = document.querySelectorAll(".modal__close-button");
-const modalContainers = document.querySelectorAll(".modal__container");
 
 //post creation
 function getCardElement(title, link) {
@@ -74,7 +73,7 @@ function getCardElement(title, link) {
     imagePopup.src = postImage.src;
     imagePopup.alt = postImage.alt;
     imagePopupTitle.textContent = postTitle.textContent;
-    toggleModal(imageModal);
+    openModal(imageModal);
   });
 
   const likeButton = cardElement.querySelector(".post__like-button");
@@ -97,25 +96,47 @@ initialCards.forEach((item) => {
 });
 
 // modal/form control
-function toggleModal(modal) {
-  modal.classList.toggle("modal_opened");
+function clickOut(evt) {
+  if (evt.target.classList.contains("modal")) {
+    closeModal(evt.target.closest(".modal"));
+  }
+}
+
+function escapeModal(evt) {
+  console.log(evt);
+  if (evt.key === "Escape") {
+    const currentModal = document.querySelector(".modal_opened");
+    closeModal(currentModal);
+  }
+}
+
+function openModal(modal) {
+  modal.classList.add("modal_opened");
+  modal.addEventListener("click", clickOut);
+  document.addEventListener("keydown", escapeModal);
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_opened");
+  modal.removeEventListener("click", clickOut);
+  document.removeEventListener("keydown", escapeModal);
 }
 
 profileOpenButton.addEventListener("click", function () {
   inputName.value = profileName.textContent;
   inputDesc.value = profileDesc.textContent;
-  toggleModal(profileModal);
+  openModal(profileModal);
 });
 
 postOpenButton.addEventListener("click", () => {
-  toggleModal(postModal);
+  openModal(postModal);
 });
 
 profileForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
   profileName.textContent = inputName.value;
   profileDesc.textContent = inputDesc.value;
-  toggleModal(profileModal);
+  closeModal(profileModal);
 });
 
 postForm.addEventListener("submit", (evt) => {
@@ -123,13 +144,13 @@ postForm.addEventListener("submit", (evt) => {
   const newPost = getCardElement(inputTitle.value, inputLink.value);
   cardGallery.prepend(newPost);
   postForm.reset();
-  toggleModal(postModal);
+  closeModal(postModal);
 });
 
 closeButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const parentModal = button.closest(".modal");
-    toggleModal(parentModal);
+    closeModal(parentModal);
   });
 });
 
