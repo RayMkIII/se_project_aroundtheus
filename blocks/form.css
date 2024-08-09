@@ -28,7 +28,7 @@
   border-bottom: rgba(0, 0, 0, 0.2) solid 1px;
 }
 
-.popup__input_type_error {
+.modal__input_type_error {
   border-bottom-color: rgba(255, 0, 0, 1);
 }
 
@@ -43,7 +43,7 @@
   top: 32px;
 }
 
-.popup__error_visible {
+.modal__error_visible {
   visibility: visible;
 }
 
@@ -65,13 +65,13 @@
   cursor: pointer;
 }
 
-.popup__button_disabled {
+.modal__button_disabled {
   color: rgba(200, 200, 200, 1);
   background-color: #fff;
   border: 1px solid rgba(200, 200, 200, 1);
 }
 
-.popup__button_disabled:hover {
+.modal__button_disabled:hover {
   opacity: 100%;
   cursor: default;
 }
