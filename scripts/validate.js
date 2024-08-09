@@ -38,11 +38,13 @@ function hasInvalidInput(inputList) {
   });
 }
 
-function toggleButtonState(inputList, buttonElement) {
+function toggleButtonState(inputList, buttonElement, { inactiveButtonClass }) {
   if (hasInvalidInput(inputList)) {
     buttonElement.disabled = true;
+    buttonElement.classList.add(inactiveButtonClass);
   } else {
     buttonElement.disabled = false;
+    buttonElement.classList.remove(inactiveButtonClass);
   }
 }
 
@@ -52,7 +54,7 @@ function setEventListeners(formElement, options) {
   );
   const buttonElement = formElement.querySelector(options.submitButtonSelector);
 
-  toggleButtonState(inputList, buttonElement);
+  toggleButtonState(inputList, buttonElement, options);
 
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", () => {

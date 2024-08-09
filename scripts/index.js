@@ -36,7 +36,7 @@ const initialCards = [object1, object2, object3, object4, object5, object6];
 //profile modal
 const profileOpenButton = document.querySelector(".profile__edit-button");
 const profileModal = document.querySelector(".profile-modal");
-const profileForm = document.forms(".profile-form");
+const profileForm = profileModal.querySelector(".form");
 
 const profileName = document.querySelector(".profile__name");
 const profileDesc = document.querySelector(".profile__description");
@@ -46,7 +46,7 @@ const inputDesc = document.querySelector(".form__input-description");
 //post modal
 const postOpenButton = document.querySelector(".profile__post-button");
 const postModal = document.querySelector(".post-modal");
-const postForm = document.forms(".post-form");
+const postForm = postModal.querySelector(".form");
 
 const inputTitle = postModal.querySelector(".form__input-title");
 const inputLink = postModal.querySelector(".form__input-link");

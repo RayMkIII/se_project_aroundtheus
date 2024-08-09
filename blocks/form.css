@@ -65,21 +65,10 @@
   cursor: pointer;
 }
 
-.form__save-button:disabled .popup__button_disabled {
-  color: rgba(200, 200, 200, 1);
-  background-color: #fff;
-  border: 1px solid rgba(200, 200, 200, 1);
-}
-
 .popup__button_disabled {
   color: rgba(200, 200, 200, 1);
   background-color: #fff;
   border: 1px solid rgba(200, 200, 200, 1);
-}
-
-.form__save-button:disabled:hover .popup__button_disabled:hover {
-  opacity: 100%;
-  cursor: default;
 }
 
 .popup__button_disabled:hover {
