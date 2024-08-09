@@ -36,7 +36,7 @@ const initialCards = [object1, object2, object3, object4, object5, object6];
 //profile modal
 const profileOpenButton = document.querySelector(".profile__edit-button");
 const profileModal = document.querySelector(".profile-modal");
-const profileForm = profileModal.querySelector(".form");
+const profileForm = document.forms(".profile-form");
 
 const profileName = document.querySelector(".profile__name");
 const profileDesc = document.querySelector(".profile__description");
@@ -46,7 +46,7 @@ const inputDesc = document.querySelector(".form__input-description");
 //post modal
 const postOpenButton = document.querySelector(".profile__post-button");
 const postModal = document.querySelector(".post-modal");
-const postForm = postModal.querySelector(".form");
+const postForm = document.forms(".post-form");
 
 const inputTitle = postModal.querySelector(".form__input-title");
 const inputLink = postModal.querySelector(".form__input-link");
@@ -102,8 +102,7 @@ function clickOut(evt) {
   }
 }
 
-function escapeModal(evt) {
-  console.log(evt);
+function handleEscape(evt) {
   if (evt.key === "Escape") {
     const currentModal = document.querySelector(".modal_opened");
     closeModal(currentModal);
@@ -113,13 +112,13 @@ function escapeModal(evt) {
 function openModal(modal) {
   modal.classList.add("modal_opened");
   modal.addEventListener("click", clickOut);
-  document.addEventListener("keydown", escapeModal);
+  document.addEventListener("keydown", handleEscape);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
   modal.removeEventListener("click", clickOut);
-  document.removeEventListener("keydown", escapeModal);
+  document.removeEventListener("keydown", handleEscape);
 }
 
 profileOpenButton.addEventListener("click", function () {
@@ -153,71 +152,3 @@ closeButtons.forEach((button) => {
     closeModal(parentModal);
   });
 });
-
-//form validation
-function showInputError(formElement, inputElement, errorMessage) {
-  const errorElement = formElement.querySelector(
-    `.${inputElement.name}-input-error`
-  );
-  inputElement.classList.add("form__input_type_error");
-  errorElement.textContent = errorMessage;
-  errorElement.classList.add("form__input-error_active");
-}
-
-function hideInputError(formElement, inputElement) {
-  const errorElement = formElement.querySelector(
-    `.${inputElement.name}-input-error`
-  );
-  inputElement.classList.remove("form__input_type_error");
-  errorElement.classList.remove("form__input-error_active");
-  errorElement.textContent = "";
-}
-
-function checkInputValidity(formElement, inputElement) {
-  if (!inputElement.validity.valid) {
-    showInputError(formElement, inputElement, inputElement.validationMessage);
-  } else {
-    hideInputError(formElement, inputElement);
-  }
-}
-
-function hasInvalidInput(inputList) {
-  return inputList.some((inputElement) => {
-    return !inputElement.validity.valid;
-  });
-}
-
-function toggleButtonState(inputList, buttonElement) {
-  if (hasInvalidInput(inputList)) {
-    buttonElement.disabled = true;
-  } else {
-    buttonElement.disabled = false;
-  }
-}
-
-function setEventListeners(formElement) {
-  const inputList = Array.from(formElement.querySelectorAll(".form__input"));
-  const buttonElement = formElement.querySelector(".form__save-button");
-
-  toggleButtonState(inputList, buttonElement);
-
-  inputList.forEach((inputElement) => {
-    inputElement.addEventListener("input", () => {
-      checkInputValidity(formElement, inputElement);
-      toggleButtonState(inputList, buttonElement);
-    });
-  });
-}
-
-function enableValidation() {
-  const formList = Array.from(document.querySelectorAll(".form"));
-
-  formList.forEach((formElement) => {
-    formElement.addEventListener("submit", (evt) => {
-      evt.preventDefault();
-    });
-    setEventListeners(formElement);
-  });
-}
-
-enableValidation();

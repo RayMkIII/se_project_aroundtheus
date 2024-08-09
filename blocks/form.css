@@ -6,9 +6,19 @@
   padding: 0;
 }
 
+.form__input-label {
+  position: relative;
+  margin: 54px 36px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form__input-label:last-of-type {
+  margin: 0 36px 48px; /* the only thing that changes between this and the name*/
+}
+
 .form__input {
   box-sizing: border-box;
-  margin: 54px 36px 0;
   padding: 0 0 13px;
   font-family: "Inter", Arial, sans-serif;
   font-weight: 400;
@@ -18,11 +28,7 @@
   border-bottom: rgba(0, 0, 0, 0.2) solid 1px;
 }
 
-.form__input:last-of-type {
-  margin: 0 36px; /* the only thing that changes between this and the name*/
-}
-
-.form__input_type_error {
+.popup__input_type_error {
   border-bottom-color: rgba(255, 0, 0, 1);
 }
 
@@ -31,17 +37,13 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 1.21;
-  margin: 5px 36px 30px;
-  padding: 0;
   color: rgba(255, 0, 0, 1);
   visibility: hidden;
+  position: absolute;
+  top: 32px;
 }
 
-.form__input-error:last-of-type {
-  margin: 5px 36px 48px;
-}
-
-.form__input-error_active {
+.popup__error_visible {
   visibility: visible;
 }
 
@@ -63,13 +65,24 @@
   cursor: pointer;
 }
 
-.form__save-button:disabled {
+.form__save-button:disabled .popup__button_disabled {
   color: rgba(200, 200, 200, 1);
   background-color: #fff;
   border: 1px solid rgba(200, 200, 200, 1);
 }
 
-.form__save-button:disabled:hover {
+.popup__button_disabled {
+  color: rgba(200, 200, 200, 1);
+  background-color: #fff;
+  border: 1px solid rgba(200, 200, 200, 1);
+}
+
+.form__save-button:disabled:hover .popup__button_disabled:hover {
+  opacity: 100%;
+  cursor: default;
+}
+
+.popup__button_disabled:hover {
   opacity: 100%;
   cursor: default;
 }
