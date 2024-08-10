@@ -72,30 +72,30 @@
         <h2 class="modal__header">Edit profile</h2>
         <form class="form modal__form" novalidate>
           <fieldset class="form__fieldset">
-            <label class="form__input-label" for="profile__name">
+            <label class="form__input-label" for="name">
               <input
                 type="text"
                 class="form__input form__input-name modal__input"
                 name="profile__name"
-                id="profile__name"
+                id="name"
                 required
                 minlength="2"
                 maxlength="40"
               />
-              <span class="form__input-error profile__name-input-error"></span>
+              <span class="form__input-error form__input-error-name"></span>
             </label>
             <label class="form__input-label" for="profile__description">
               <input
                 type="text"
                 class="form__input form__input-description modal__input"
                 name="profile__description"
-                id="profile__description"
+                id="description"
                 required
                 minlength="2"
                 maxlength="200"
               />
               <span
-                class="form__input-error profile__description-input-error"
+                class="form__input-error form__input-error-description"
               ></span>
             </label>
             <button
@@ -120,29 +120,29 @@
         <h2 class="modal__header">New place</h2>
         <form class="form modal__form" novalidate>
           <fieldset class="form__fieldset">
-            <label class="form__input-label" for="post__title">
+            <label class="form__input-label" for="title">
               <input
                 type="text"
                 class="form__input form__input-title modal__input"
                 placeholder="Title"
                 name="post__title"
-                id="post__title"
+                id="title"
                 required
                 minlength="1"
                 maxlength="30"
               />
-              <span class="form__input-error post__title-input-error"></span>
+              <span class="form__input-error form__input-error-title"></span>
             </label>
-            <label class="form__input-label" for="post__link">
+            <label class="form__input-label" for="link">
               <input
                 type="url"
                 class="form__input form__input-link modal__input"
                 placeholder="Image URL"
                 name="post__link"
-                id="post__link"
+                id="link"
                 required
               />
-              <span class="form__input-error post__link-input-error"></span>
+              <span class="form__input-error form__input-error-link"></span>
             </label>
             <button
               class="form__save-button modal__button"

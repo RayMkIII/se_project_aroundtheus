@@ -4,7 +4,7 @@ function showInputError(
   { inputErrorClass, errorClass }
 ) {
   const errorElement = formElement.querySelector(
-    `.${inputElement.name}-input-error`
+    `.form__input-error-${inputElement.id}`
   );
   inputElement.classList.add(inputErrorClass);
   errorElement.textContent = inputElement.validationMessage;
@@ -17,7 +17,7 @@ function hideInputError(
   { inputErrorClass, errorClass }
 ) {
   const errorElement = formElement.querySelector(
-    `.form__${inputElement.name}-input-error`
+    `.form__input-error-${inputElement.id}`
   );
   inputElement.classList.remove(inputErrorClass);
   errorElement.classList.remove(errorClass);
